@@ -78,8 +78,6 @@ services:
         environment:
             - "I_AM_DEVELOPER_DISABLE_INDEX_IP_CHECK="
         restart: on-failure
-        ports:
-        - 9999:9999
 
     sh:
         image: kiboko/php:7.2-cli-blackfire-orocommerce-ee-3.1-postgresql
@@ -113,7 +111,6 @@ services:
             - COMPOSER_PROCESS_TIMEOUT
         command: [ "sleep", "31536000" ]
         restart: "always"
-
 
 volumes:
     backups:
