@@ -72,7 +72,7 @@ services:
         user: docker:docker
         volumes:
             - ./:/var/www/html
-            - .docker/fpmxdebug/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+            - .docker/fpm-xdebug/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
             - cache:/var/www/html/var/cache
             - assets:/var/www/html/public/bundles
         environment:
@@ -80,12 +80,6 @@ services:
         restart: on-failure
         ports:
         - 9999:9999
-
-    dbgp:
-        build:
-            context: './.docker/dbgp/'
-        ports:
-            - ${DBGP_PORT}:9001
 
     sh:
         image: kiboko/php:7.2-cli-blackfire-orocommerce-ee-3.1-postgresql
