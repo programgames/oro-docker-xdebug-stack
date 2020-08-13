@@ -111,7 +111,11 @@ services:
         command: [ "sleep", "31536000" ]
         restart: "always"
 
-
+    dbgp:
+        build:
+            context: './.docker/dbgp/'
+        ports:
+            - ${DBGP_PORT}:9002
 volumes:
     backups:
         driver: local
