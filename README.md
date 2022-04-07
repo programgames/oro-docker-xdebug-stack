@@ -9,7 +9,6 @@ Locally :
     - change to `xdebug.remote_host=docker.for.mac.localhost` to `xdebug.remote_host=ip_of_docker_host`
       when ip_of_docker_host if the of your local machine , running docker , phpstorm...
       You can use this command : `hostname -I | awk '{print $1}'`
-    - `docker-compose start`
 - `docker-compose up -d`
 - configure phpstorm xdebug port to 9001
 - set a breakpoint in index_dev.php
